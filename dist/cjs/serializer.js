@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.serializeCubes = void 0;
 const gzip_js_1 = require("gzip-js");
 function serializeCubes(cubes) {
-    const sig = [0x43, 0x55, 0x42, 0x5A];
+    const sig = [0x43, 0x55, 0x42, 0x5a];
     let output = [];
     for (const cube of cubes) {
         output.push(cube.index);

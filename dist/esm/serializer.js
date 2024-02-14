@@ -1,6 +1,6 @@
-import gzip from "gzip-js";
+import gzip from 'gzip-js';
 export function serializeCubes(cubes) {
-    const sig = [0x43, 0x55, 0x42, 0x5A];
+    const sig = [0x43, 0x55, 0x42, 0x5a];
     let output = [];
     for (const cube of cubes) {
         output.push(cube.index);

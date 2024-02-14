@@ -25,7 +25,8 @@ function findCubes(array) {
         for (let j = 0; j < yLen; j++) {
             for (let k = 0; k < zLen; k++) {
                 const index = array[i][j][k];
-                if (1 <= index && index <= 256) { // Check if the value is in the range of 0-256
+                if (1 <= index && index <= 256) {
+                    // Check if the value is in the range of 0-256
                     // Find the size of the cube in all three dimensions
                     let sizeX = 1;
                     let sizeY = 1;
@@ -45,7 +46,7 @@ function findCubes(array) {
                         cubes.push({
                             start: [i, j, k],
                             end: [sizeX, sizeY, sizeZ],
-                            index: index
+                            index: index,
                         });
                         // Update occupied coordinates
                         for (let x = i; x < i + sizeX; x++) {

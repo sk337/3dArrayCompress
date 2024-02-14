@@ -17,5 +17,5 @@
   },
   "exclude": ["**/*test*"],
   "moduleDetection": "force",
-  "include": ["src/*.ts" , "src/*.js"]
+  "include": ["src/*"]
 }

@@ -4,7 +4,7 @@ exports.writeString = exports.read7BitEncodedInt = exports.write7BitEncodedInt =
 function write7BitEncodedInt(value) {
     const buffer = [];
     do {
-        let byte = value & 0x7F; // Keep 7 bits
+        let byte = value & 0x7f; // Keep 7 bits
         value >>= 7; // Shift right by 7 bits
         if (value !== 0) {
             byte |= 0x80; // Set the high bit if there are more bytes to come
@@ -16,20 +16,20 @@ function write7BitEncodedInt(value) {
 exports.write7BitEncodedInt = write7BitEncodedInt;
 function read7BitEncodedInt(reader, readStart) {
     if (readStart === undefined) {
-        throw Error("readStart is required");
+        throw Error('readStart is required');
     }
     let value = 0;
     let shift = 0;
     let bytesRead = readStart;
     for (; shift < 35; shift += 7) {
         const byte = reader[bytesRead++];
-        value |= (byte & 0x7F) << shift;
+        value |= (byte & 0x7f) << shift;
         if ((byte & 0x80) === 0) {
             break;
         }
     }
     if (shift >= 35 || (shift === 28 && reader[bytesRead++] !== 0)) {
-        throw new Error("Invalid 7-bit encoded integer");
+        throw new Error('Invalid 7-bit encoded integer');
     }
     return [value, bytesRead];
 }
