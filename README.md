@@ -13,7 +13,7 @@ run the command `npm install @sk337/3dArrayCompress`
 1. Clone the repository `git clone git+https://github.com/sk337/3dArrayCompress.git`
 2. install dependencies `npm i`
 3. Complie code `npm run build`
-4. install the package ``npm i ./
+4. install the package `npm i ./`
 
 ## usage
 
