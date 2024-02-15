@@ -1,1 +1,1 @@
-export * from './cubeGen';
+export * from './BinaryHandler';
