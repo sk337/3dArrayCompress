@@ -62,6 +62,46 @@ class BinaryHandler {
         } while (byte & 0x80);
         return value;
     }
+    readInt8() {
+        const view = new DataView(this.data.buffer, this.position, 1);
+        this.position += 1;
+        return view.getInt8(0);
+    }
+    readUint8() {
+        const view = new DataView(this.data.buffer, this.position, 1);
+        this.position += 1;
+        return view.getUint8(0);
+    }
+    readInt16() {
+        const view = new DataView(this.data.buffer, this.position, 2);
+        this.position += 2;
+        return view.getInt16(0, true);
+    }
+    readUint16() {
+        const view = new DataView(this.data.buffer, this.position, 2);
+        this.position += 2;
+        return view.getUint16(0, true);
+    }
+    readInt32() {
+        const view = new DataView(this.data.buffer, this.position, 4);
+        this.position += 4;
+        return view.getInt32(0, true);
+    }
+    readUint32() {
+        const view = new DataView(this.data.buffer, this.position, 4);
+        this.position += 4;
+        return view.getUint32(0, true);
+    }
+    readInt64() {
+        const view = new DataView(this.data.buffer, this.position, 8);
+        this.position += 8;
+        return view.getBigInt64(0, true);
+    }
+    readUint64() {
+        const view = new DataView(this.data.buffer, this.position, 8);
+        this.position += 8;
+        return view.getBigUint64(0, true);
+    }
     toString() {
         if (typeof TextDecoder === 'undefined') {
             let o = '';
