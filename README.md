@@ -6,11 +6,11 @@
 
 **From Github** 
 
-run the command `npm install @sk337/3dArrayCompress`
+run the command `npm install git+https://github.com/sk337/JSBinary.git`
 
 **Locally**
 
-1. Clone the repository `git clone git+https://github.com/sk337/3dArrayCompress.git`
+1. Clone the repository `git clone https://github.com/sk337/JSBinary.git`
 2. install dependencies `npm i`
 3. Complie code `npm run build`
 4. install the package `npm i ./`
@@ -18,24 +18,11 @@ run the command `npm install @sk337/3dArrayCompress`
 ## usage
 
 ```js
-import { findCubes } from "3d-array-compress";
+import { BinaryHandler } from "../src";
 
-const array = [
-  [
-    [1, 1, 0],
-    [0, 2, 0],
-    [1, 0, 1]
-  ], [
-    [0, 1, 0],
-    [1, 2, 0],
-    [0, 0, 1]
-  ], [
-    [0, 0, 0],
-    [1, 2, 1],
-    [1, 1, 0]
-  ]
-];
+const f = new BinaryHandler();
 
-const cubes = findCubes(array);
-console.log(cubes)
+f.write("Hello, World!");
+console.log(f);
+console.log(f.toString());
 ```
