@@ -69,49 +69,41 @@ class BinaryHandler {
 
   readInt8(): number {
     const view = new DataView(this.read(1).buffer);
-    this.position += 1;
     return view.getInt8(0);
   }
 
   readUint8(): number {
     const view = new DataView(this.read(1).buffer);
-    this.position += 1;
     return view.getUint8(0);
   }
 
   readInt16(le: boolean = true): number {
     const view = new DataView(this.read(2).buffer);
-    this.position += 2;
     return view.getInt16(0, le);
   }
 
   readUint16(le: boolean = true): number {
     const view = new DataView(this.read(2).buffer);
-    this.position += 2;
     return view.getUint16(0, le);
   }
 
   readInt32(le: boolean = true): number {
     const view = new DataView(this.read(4).buffer);
-    this.position += 4;
     return view.getInt32(0, le);
   }
 
   readUint32(le: boolean = true): number {
     const view = new DataView(this.read(4).buffer);
-    this.position += 4;
     return view.getUint32(0, le);
   }
 
   readInt64(le: boolean = true): BigInt {
     const view = new DataView(this.read(8).buffer);
-    this.position += 8;
     return view.getBigInt64(0, le);
   }
 
   readUint64(le: boolean = true): BigInt {
     const view = new DataView(this.read(8).buffer);
-    this.position += 8;
     return view.getBigUint64(0, le);
   }
 
