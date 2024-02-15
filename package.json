@@ -2,6 +2,7 @@
   "name": "jsbinary",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "version": "1.0.0",
   "devDependencies": {
     "bun": "^1.0.26",
     "bun-types": "^1.0.1",
