@@ -1,5 +1,5 @@
 import { BinaryHandler } from './BinaryHandler';
-import { describe, test, expect, beforeEach} from "bun:test";
+import { describe, test, expect, beforeEach } from 'bun:test';
 
 describe('BinaryHandler', () => {
   let binaryHandler: BinaryHandler;

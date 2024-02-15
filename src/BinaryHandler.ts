@@ -69,8 +69,11 @@ class BinaryHandler {
 
   toString(): string {
     if (typeof TextDecoder === 'undefined') {
-      // Fallback for environments where TextDecoder is not available
-      return String.fromCharCode.apply(null, this.data);
+      let o = '';
+      this.data.forEach((v) => {
+        o += String.fromCharCode(v);
+      });
+      return o;
     } else {
       return new TextDecoder().decode(this.data);
     }

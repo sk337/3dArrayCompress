@@ -12,7 +12,7 @@
     "clean": "rm -rf dist",
     "prebuild": "rm -rf dist",
     "build": "tsc --outdir dist/cjs -m commonjs && tsc --outdir dist/esm",
-    "lint": "prettier --write 'src/**/*.ts'",
+    "lint": "prettier --write 'src/**/*.ts' && tsc --noEmit",
     "test": "bun test"
   },
   "type": "module"
