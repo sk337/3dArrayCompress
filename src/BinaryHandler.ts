@@ -79,40 +79,40 @@ class BinaryHandler {
     return view.getUint8(0);
   }
 
-  readInt16(): number {
+  readInt16(le: boolean = true): number {
     const view = new DataView(this.data.buffer, this.position, 2);
     this.position += 2;
-    return view.getInt16(0, true);
+    return view.getInt16(0, le);
   }
 
-  readUint16(): number {
+  readUint16(le: boolean = true): number {
     const view = new DataView(this.data.buffer, this.position, 2);
     this.position += 2;
-    return view.getUint16(0, true);
+    return view.getUint16(0, le);
   }
 
-  readInt32(): number {
+  readInt32(le: boolean = true): number {
     const view = new DataView(this.data.buffer, this.position, 4);
     this.position += 4;
-    return view.getInt32(0, true);
+    return view.getInt32(0, le);
   }
 
-  readUint32(): number {
+  readUint32(le: boolean = true): number {
     const view = new DataView(this.data.buffer, this.position, 4);
     this.position += 4;
-    return view.getUint32(0, true);
+    return view.getUint32(0, le);
   }
 
-  readInt64(): BigInt {
+  readInt64(le: boolean = true): BigInt {
     const view = new DataView(this.data.buffer, this.position, 8);
     this.position += 8;
-    return view.getBigInt64(0, true);
+    return view.getBigInt64(0, le);
   }
 
-  readUint64(): BigInt {
+  readUint64(le: boolean = true): BigInt {
     const view = new DataView(this.data.buffer, this.position, 8);
     this.position += 8;
-    return view.getBigUint64(0, true);
+    return view.getBigUint64(0, le);
   }
 
   toString(): string {
