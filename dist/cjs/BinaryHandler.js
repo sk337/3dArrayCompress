@@ -23,12 +23,12 @@ class BinaryHandler {
         if (typeof data === 'string') {
             data = new TextEncoder().encode(data);
         }
-        const newData = new Uint8Array(this.data.length + data.length);
+        const newData = new Uint8Array(Math.max(this.data.length, this.position + data.length));
         newData.set(this.data);
-        newData.set(data, this.data.length);
+        newData.set(data, this.position); // Write at the current position
         this.data = newData;
         bytesWritten = data.length;
-        this.position += bytesWritten;
+        this.position += bytesWritten; // Advance the position
         return bytesWritten;
     }
     seek(offset, whence = 'start') {
@@ -58,6 +58,9 @@ class BinaryHandler {
         let shift = 0;
         let byte;
         do {
+            if (this.position >= this.data.length) {
+                throw new Error('Attempted to read beyond the end of the buffer');
+            }
             byte = this.data[this.position];
             value |= (byte & 0x7f) << shift;
             shift += 7;

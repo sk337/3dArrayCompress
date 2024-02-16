@@ -22,12 +22,14 @@ class BinaryHandler {
     if (typeof data === 'string') {
       data = new TextEncoder().encode(data);
     }
-    const newData = new Uint8Array(Math.max(this.data.length, this.position + data.length));
+    const newData = new Uint8Array(
+      Math.max(this.data.length, this.position + data.length),
+    );
     newData.set(this.data);
-    newData.set(data, this.position);  // Write at the current position
+    newData.set(data, this.position); // Write at the current position
     this.data = newData;
     bytesWritten = data.length;
-    this.position += bytesWritten;  // Advance the position
+    this.position += bytesWritten; // Advance the position
     return bytesWritten;
   }
 
